@@ -1,0 +1,31 @@
+.map td {
+  height: 50px;
+  width: 50px;
+  border: 1px dashed black;
+}
+
+.map td.empty {
+  background: transparent;
+  border: none;
+}
+
+
+.map td.grass {
+  background: green;
+}
+
+.map td.lava {
+  background: red;
+}
+
+.map td.water {
+  background: #66BFBF;
+}
+
+.map td.goal {
+  box-shadow: inset -2px -2px 6px 1px #e8ff00e8;
+}
+
+.map td.player {
+  border: 2px solid red;
+}

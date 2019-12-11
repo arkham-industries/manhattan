@@ -5,7 +5,7 @@
 }
 
 .map td.empty {
-  background: transparent;
+  background: black;
   border: none;
 }
 
@@ -22,10 +22,12 @@
   background: #66BFBF;
 }
 
-.map td.goal {
+.map td.goal:hover {
   box-shadow: inset -2px -2px 6px 1px #e8ff00e8;
+  background: gold;
 }
 
-.map td.player {
+.map td.player:hover {
   border: 2px solid red;
+  background: purple;
 }

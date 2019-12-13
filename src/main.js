@@ -25,14 +25,14 @@ const gameState = {
   ],
   goal: {
     position: {
-      x: 4,
-      y: 1
+      row: 1,
+      column: 4
     }
   },
   player: {
     position: {
-      x: 2,
-      y: 0
+      row: 3,
+      column: 2
     }
   }
 };
@@ -72,5 +72,25 @@ const drawMap = function() {
   mapElement.parentNode.replaceChild(newMapHtml, mapElement);
 
   console.log('drawing map', newMapHtml);
-}
+};
+
+
+const drawPlayer = function() {
+  const mapElement = findMapElement();
+
+  const playerRowIndex = gameState.player.position.row;
+  const playerColumnIndex = gameState.player.position.column;
+
+  const playerRow = mapElement.children[playerRowIndex];
+  const tileElement = playerRow.children[playerColumnIndex];
+
+  console.log('the player should be on this tile', tileElement);
+  tileElement.classList.add('player');
+};
+
+
+const main = function() {
+  drawMap();
+  drawPlayer();
+};
 

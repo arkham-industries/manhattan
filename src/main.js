@@ -12,12 +12,16 @@ const waterTile = {
   type: 'water',
 };
 
+const lavaTile = {
+  type: 'lava',
+};
+
 const gameState = {
   map: [
     [ emptyTile, emptyTile, grassTile, emptyTile, emptyTile ],
     [ grassTile, grassTile, grassTile, grassTile, grassTile ],
     [ emptyTile, waterTile, grassTile, grassTile, emptyTile ],
-    [ emptyTile, emptyTile, grassTile, emptyTile, emptyTile ],
+    [ emptyTile, lavaTile, grassTile, emptyTile, emptyTile ],
   ],
   goal: {
     position: {
@@ -31,6 +35,10 @@ const gameState = {
       y: 0
     }
   }
+};
+
+const findMapElement = function() {
+  return document.getElementsByClassName('map')[0];
 };
 
 const drawMap = function() {
@@ -56,7 +64,13 @@ const drawMap = function() {
 
   }
 
-  document.body.appendChild(newMapHtml);
+  // add map to DOM
+  // document.body.appendChild(newMapHtml);
+
+  // replace the class="map" on the page
+  const mapElement = findMapElement();
+  mapElement.parentNode.replaceChild(newMapHtml, mapElement);
+
   console.log('drawing map', newMapHtml);
 }
 

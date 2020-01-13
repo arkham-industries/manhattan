@@ -88,9 +88,23 @@ const drawPlayer = function() {
   tileElement.classList.add('player');
 };
 
+const drawGoal = function() {
+  const mapElement = findMapElement();
+
+  const goalRowIndex = gameState.goal.position.row;
+  const goalColumnIndex = gameState.goal.position.column;
+
+  const goalRow = mapElement.children[goalRowIndex];
+  const tileElement = goalRow.children[goalColumnIndex];
+
+  console.log('the goal should be on this tile', tileElement);
+  tileElement.classList.add('goal');
+};
+
 
 const main = function() {
   drawMap();
   drawPlayer();
+  drawGoal();
 };
 
